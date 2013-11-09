@@ -25,6 +25,18 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      dist: {
+        files: {
+          'css/app.min.css' : [
+            'assets/scss/app.scss'
+          ]
+        }
+      },
+      options: {
+        style: 'compressed'
+      }
+    },
     uglify: {
       dist: {
         files: {
@@ -40,13 +52,19 @@ module.exports = function(grunt) {
         files: [
           'assets/less/*.less'
         ],
-        tasks: ['recess', 'version']
+        tasks: ['recess']
+      },
+      css: {
+        files: [
+          'assets/scss/*.scss'
+        ],
+        tasks: ['sass']
       },
       js: {
         files: [
           '<%= jshint.all %>'
         ],
-        tasks: ['jshint', 'uglify', 'version']
+        tasks: ['jshint', 'uglify']
       },
       livereload: {
         // Browser live reloading
@@ -75,12 +93,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-recess');
 
   // Register tasks
   grunt.registerTask('default', [
     'clean',
     'recess',
+    //'sass',
     'uglify'
   ]);
   grunt.registerTask('dev', [
