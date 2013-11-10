@@ -80,26 +80,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-    copy: {
-      main: {
-        files: [
-          {
-              expand: true,
-              cwd: 'bower_components/normalize-css/',
-              src: ['**.css'],
-              dest: 'assets/less/plugins/',
-              ext: '.less'
-          },
-          {
-              expand: true,
-              cwd: 'bower_components/normalize-css/',
-              src: ['**.css'],
-              dest: 'assets/scss/plugins/',
-              ext: '.scss'
-          }
-        ]
-      }
-    },
     clean: {
       dist: [
         'css/main.min.css',
@@ -114,7 +94,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-recess');
 
   // Register tasks
