@@ -34,3 +34,4 @@ nbproject
 .CVS
 /node_modules
 /config.json
+/bower_components
