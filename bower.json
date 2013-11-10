@@ -1,0 +1,22 @@
+{
+  "name": "starting-point",
+  "version": "0.1.0",
+  "homepage": "https://github.com/neverendingo/starting-point",
+  "authors": [
+    "Ingo Malchow <imalchow@kde.org>"
+  ],
+  "description": "Dummy starting point for new website design. Works with LESS and SASS",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~2.1.3"
+  }
+}
