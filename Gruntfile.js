@@ -2,6 +2,21 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    htmlhint: {
+      build: {
+        options: {
+          'tag-pair': true,
+          'tagname-lowercase': true,
+          'attr-lowercase': true,
+          'attr-value-double-quotes': true,
+          'doctype-first': true,
+          'spec-char-escape': true,
+          'id-unique': true,
+          'style-disabled': true
+        },
+        src: ['index.html']
+      }
+    },
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -47,6 +62,10 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      html: {
+        files: ['index.html'],
+        tasks: ['htmlhint']
+      },
       less: {
         files: [
           'assets/less/*.less'
@@ -94,9 +113,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-htmlhint');
 
   // Register tasks
   grunt.registerTask('default', [
+    'htmlhint',
     'clean',
     'recess',
     //'sass',
