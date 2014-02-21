@@ -51,6 +51,18 @@ module.exports = function(grunt) {
         style: 'compressed'
       }
     },
+    stylus: {
+      dist: {
+        files: {
+          'css/app.min.css' : [
+            'assets/stylus/app.styl'
+          ]
+        }
+      },
+      options: {
+        compress: true
+      }
+    },
     uglify: {
       dist: {
         files: {
@@ -112,6 +124,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('grunt-htmlhint');
 
@@ -121,6 +134,7 @@ module.exports = function(grunt) {
     'clean',
     'recess',
     //'sass',
+    //'stylus',
     'uglify'
   ]);
   grunt.registerTask('dev', [
