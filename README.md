@@ -1,7 +1,7 @@
 starting-point
 ==============
 
-Dummy starting point for new website design. Works with LESS and SASS
+Dummy starting point for new website design. Works with LESS, SASS and Stylus
 
 It uses some (hopefully) best practices, collected around the net.
 The static html is based on http://html5bones.com/ , jquery and modernizr included.
